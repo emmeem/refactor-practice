@@ -1,15 +1,15 @@
-package com.twu.refactoring;
+ package com.twu.refactoring;
 
 public class LineItem {
-	private String desc;
-	private double p;
-	private int qty;
+	private final String desc;
+	private final double price;
+	private final int quantity;
 
-	public LineItem(String desc, double p, int qty) {
+	public LineItem(String desc, double price, int quantity) {
 		super();
 		this.desc = desc;
-		this.p = p;
-		this.qty = qty;
+		this.price = price;
+		this.quantity = quantity;
 	}
 
 	public String getDescription() {
@@ -17,14 +17,15 @@ public class LineItem {
 	}
 
 	public double getPrice() {
-		return p;
+		return price;
 	}
 
 	public int getQuantity() {
-		return qty;
+		return quantity;
 	}
 
     double totalAmount() {
-        return p * qty;
+        double totalAmount = price * quantity;
+		return totalAmount;
     }
 }
